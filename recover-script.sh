@@ -14,7 +14,7 @@ echo "[$(date)] Starting recovery of $BACKUP_FILE..." >> ~/backup-project/logs/b
 if [ -f ~/backup-project/backups/$BACKUP_FILE ]; then
     # Perform the recovery
     tar -xzf ~/backup-project/backups/$BACKUP_FILE -C ~/backup-project/data
-    
+
     if [ $? -eq 0 ]; then
         echo "[$(date)] Recovery successful" >> ~/backup-project/logs/backup.log
     else
