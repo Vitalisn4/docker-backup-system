@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  backup-system:
+    build:
+      context: .
+      dockerfile: docker-setup/Dockerfile
+    volumes:
+      - ./backups:/app/backups
+      - ./logs:/app/logs
+    restart: unless-stopped
