@@ -1,6 +1,6 @@
-backups/*
-logs/*
-data/*
+#backups/*
+#logs/*
+#data/
 .DS_Store
 .env
-*.log
+#*.log
