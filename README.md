@@ -342,6 +342,7 @@ RUN apt-get update && \
 # Create necessary directories
 WORKDIR /app
 RUN mkdir -p data backups logs
+RUN mkdir -p /app/logs /app/backups /app/data
 
 # Copy scripts and mock data
 COPY backup-script.sh /app/
@@ -370,7 +371,10 @@ services:
     volumes:
       - ./backups:/app/backups
       - ./logs:/app/logs
-    restart: unless-stopped
+      - ./data:/app/data
+     environment:
+      - BACKUP_FREQUENCY=daily     
+    restart: always
 ```
 
 #### 5. System Deployment
