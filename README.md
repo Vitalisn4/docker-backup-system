@@ -359,7 +359,7 @@ RUN (crontab -l 2>/dev/null; echo "0 0 * * * /app/backup-script.sh") | crontab -
 CMD ["cron", "-f"]
 ```
 
-##### 3.2 Docker Compose Configuration
+##### 2. Docker Compose Configuration
 Create docker-compose.yml in the root directory:
 ```yaml
 version: '3.8'
@@ -377,7 +377,7 @@ services:
     restart: always
 ```
 
-#### 5. System Deployment
+#### 3. System Deployment
 Build and start the Docker container:
 ```bash
 # Build container
@@ -387,7 +387,7 @@ docker-compose build
 docker-compose up -d
 ```
 
-#### 6. Verification Steps
+#### 4. Verification Steps
 Verify the setup with these commands:
 ```bash
 # Check container status
@@ -400,7 +400,7 @@ docker-compose exec backup-system ls -l /app/data
 docker-compose exec backup-system ps aux | grep cron
 ```
 
-#### 7. Testing Procedures
+#### 5. Testing Procedures
 Test the backup and recovery functionality:
 ```bash
 # Execute manual backup
