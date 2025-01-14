@@ -11,6 +11,9 @@ RUN apt-get update && \
 WORKDIR /app
 RUN mkdir -p data backups logs
 
+# Create necessary directories
+RUN mkdir -p /app/logs /app/backups /app/data
+
 # Copy scripts and mock data
 COPY backup-script.sh /app/
 COPY recover-script.sh /app/
