@@ -16,3 +16,5 @@ if [ $? -eq 0 ]; then
 else
     echo "[$(date)] Backup failed" >> ~/backup-project/logs/backup.log
 fi
+
+
